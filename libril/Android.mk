@@ -1,5 +1,7 @@
 # Copyright 2006 The Android Open Source Project
 
+ifneq ($(BOARD_PROVIDES_LIBRIL),true)
+
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
@@ -36,6 +38,7 @@ LOCAL_SANITIZE := integer
 
 include $(BUILD_SHARED_LIBRARY)
 
+endif
 
 # For RdoServD which needs a static library
 # =========================================
