@@ -24,6 +24,10 @@ ifeq ($(SIM_COUNT), 2)
     LOCAL_CFLAGS += -DANDROID_SIM_COUNT_2
 endif
 
+ifneq ($(filter msm8960 msm8226 msm8x26 msm8974 msm8x74 msm8x84 msm8084 msm8916 msm8992 msm8994,$(TARGET_BOARD_PLATFORM)),)
+    LOCAL_CFLAGS += -DQCOM_HARDWARE
+endif
+
 LOCAL_MODULE:= rild
 LOCAL_MODULE_TAGS := optional
 
